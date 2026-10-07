@@ -1,0 +1,101 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-surface: #f4f5f3;
+  --color-card: #ffffff;
+  --color-ink: #101c1a;
+  --color-muted: #5d6b68;
+  --color-faint: #8b9794;
+  --color-line: #dfe3e0;
+  --color-line-soft: #eef0ee;
+
+  --color-primary: #0e5f57;
+  --color-primary-dark: #0a4a44;
+  --color-primary-soft: #e2efec;
+
+  --color-normal: #15703d;
+  --color-normal-soft: #e5f2e9;
+  --color-risk: #a35408;
+  --color-risk-soft: #faeeda;
+  --color-attention: #a51d1d;
+  --color-attention-soft: #fbe7e7;
+  --color-neutral-soft: #eceeed;
+
+  --font-sans:
+    'Segoe UI', system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif;
+  --font-mono: ui-monospace, 'Cascadia Mono', 'Segoe UI Mono', Menlo, monospace;
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-surface text-ink font-sans antialiased;
+    font-feature-settings: 'cv02', 'cv03';
+  }
+
+  /* Angka pengukuran wajib rata kanan dan selebar tetap agar kolom mudah dipindai. */
+  .tnum {
+    font-variant-numeric: tabular-nums;
+  }
+
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-primary;
+  }
+}
+
+@layer components {
+  .card {
+    @apply rounded-lg border border-line bg-card shadow-[0_1px_2px_rgba(16,28,26,0.04)];
+  }
+
+  .field-label {
+    @apply mb-1 block text-xs font-semibold tracking-wide text-muted uppercase;
+  }
+
+  .field-input {
+    @apply w-full rounded-md border border-line bg-card px-3 py-2 text-sm text-ink
+      placeholder:text-faint focus:border-primary focus:ring-2 focus:ring-primary/15 focus:outline-none
+      disabled:cursor-not-allowed disabled:bg-line-soft disabled:text-faint;
+  }
+
+  .table-head {
+    @apply border-b border-line bg-line-soft/60 px-3 py-2 text-left text-[11px] font-semibold
+      tracking-wider text-muted uppercase whitespace-nowrap;
+  }
+
+  .table-cell {
+    @apply border-b border-line-soft px-3 py-2 text-sm whitespace-nowrap;
+  }
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+
+  body {
+    background: #fff;
+  }
+
+  .print-full {
+    position: static !important;
+    display: block !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+  }
+
+  .card {
+    box-shadow: none !important;
+    border-color: #ccc !important;
+    break-inside: avoid;
+  }
+
+  @page {
+    margin: 14mm;
+  }
+}
