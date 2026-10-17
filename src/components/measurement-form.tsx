@@ -1,4 +1,4 @@
-﻿import { useQuery } from '@tanstack/react-query'
+import { useQuery } from '@tanstack/react-query'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useServerFn } from '@tanstack/react-start'
 import { useEffect, useState } from 'react'
@@ -41,7 +41,7 @@ function ResultTile({ title, result }: { title: string; result: IndicatorResult 
       <p className="text-[11px] font-semibold tracking-wide text-muted uppercase">{title}</p>
       <div className="mt-2 flex items-baseline gap-2">
         <span className="text-2xl font-semibold tnum">
-          {result.zScore === null ? 'â€”' : formatZ(result.zScore)}
+          {result.zScore === null ? '-' : formatZ(result.zScore)}
         </span>
         <span className="text-[11px] text-faint">Z-score</span>
       </div>
@@ -94,7 +94,7 @@ export function CalculationSummary({ calculation }: { calculation: CalculationRe
       <div>
         <dt className="text-[11px] font-semibold tracking-wide text-muted uppercase">Umur</dt>
         <dd className="mt-0.5 tnum">
-          {age === null ? 'â€”' : `${age.years} th ${age.months} bln ${age.days} hr`}
+          {age === null ? '-' : `${age.years} th ${age.months} bln ${age.days} hr`}
         </dd>
       </div>
       <div>
@@ -103,14 +103,14 @@ export function CalculationSummary({ calculation }: { calculation: CalculationRe
         </dt>
         <dd className="mt-0.5 tnum">
           {calculation.correctedLengthHeight === null
-            ? 'â€”'
+            ? '-'
             : `${formatNumber(calculation.correctedLengthHeight.correctedLengthHeightCm, 2)} cm`}
         </dd>
       </div>
       <div>
         <dt className="text-[11px] font-semibold tracking-wide text-muted uppercase">IMT</dt>
         <dd className="mt-0.5 tnum">
-          {calculation.bmi === null ? 'â€”' : `${formatNumber(calculation.bmi, 2)} kg/mÂ²`}
+          {calculation.bmi === null ? '-' : `${formatNumber(calculation.bmi, 2)} kg/m²`}
         </dd>
       </div>
       <div>
@@ -272,7 +272,7 @@ export function MeasurementForm({
         <>
           {calculation.isFetching ? (
             <p className="flex items-center gap-2 text-xs text-muted">
-              <Spinner /> Menghitungâ€¦
+              <Spinner /> Menghitung…
             </p>
           ) : null}
 
@@ -313,7 +313,7 @@ export function MeasurementForm({
                   <ResultTiles calculation={calc} />
                 </div>
                 <p className="border-t border-line px-4 py-2 text-[10px] leading-relaxed text-faint">
-                  {calc.calculationVersion} Â· Referensi {calc.weightForAge.sourceTable ?? '-'}
+                  {calc.calculationVersion} · Referensi {calc.weightForAge.sourceTable ?? '-'}
                 </p>
               </Card>
             </>

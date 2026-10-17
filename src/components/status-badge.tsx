@@ -78,11 +78,11 @@ export { OVERALL_INCOMPLETE }
 
 /** Z-score dengan tanda eksplisit; null ditampilkan sebagai "-" bukan 0. */
 export function formatZ(z: number | null | undefined): string {
-  if (z === null || z === undefined) return '—'
+  if (z === null || z === undefined) return '-'
   return `${z > 0 ? '+' : ''}${z.toFixed(2)}`
 }
 
 export function formatNumber(value: number | null | undefined, digits = 1): string {
-  if (value === null || value === undefined) return '—'
+  if (value === null || value === undefined) return '-'
   return value.toFixed(digits)
 }

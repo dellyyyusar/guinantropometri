@@ -1,4 +1,4 @@
-﻿import { useEffect, useId, useRef, type ButtonHTMLAttributes, type InputHTMLAttributes, type ReactNode, type SelectHTMLAttributes, type TextareaHTMLAttributes } from 'react'
+import { useEffect, useId, useRef, type ButtonHTMLAttributes, type InputHTMLAttributes, type ReactNode, type SelectHTMLAttributes, type TextareaHTMLAttributes } from 'react'
 import { twMerge } from 'tailwind-merge'
 
 export function cn(...classes: (string | false | null | undefined)[]): string {
@@ -240,7 +240,7 @@ export function Modal({
       <div className="flex items-start justify-between gap-4 border-b border-line px-4 py-3">
         <h2 className="text-sm font-semibold">{title}</h2>
         <Button variant="ghost" size="sm" onClick={onClose} aria-label="Tutup">
-          âœ•
+          ✕
         </Button>
       </div>
       <div className="max-h-[70vh] overflow-y-auto px-4 py-3">{children}</div>
@@ -266,7 +266,7 @@ export function Pagination({
   return (
     <nav className="flex flex-wrap items-center justify-between gap-3 px-1 py-2" aria-label="Navigasi halaman">
       <p className="text-xs text-muted tnum">
-        Halaman {page} dari {totalPages} Â· {total} data
+        Halaman {page} dari {totalPages} · {total} data
       </p>
       <div className="flex gap-2">
         <Button variant="secondary" size="sm" disabled={page <= 1} onClick={() => onChange(page - 1)}>

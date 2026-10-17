@@ -1,4 +1,4 @@
-﻿import { randomBytes } from 'node:crypto'
+import { randomBytes } from 'node:crypto'
 import { deleteCookie, getCookie, getRequestIP, setCookie } from '@tanstack/react-start/server'
 import { eq, lt } from 'drizzle-orm'
 import { compare, hash } from 'bcryptjs'

@@ -113,7 +113,7 @@ function ChildrenPage() {
                     <td className="table-cell">{formatGender(child.gender)}</td>
                     <td className="table-cell tnum">{formatDateShort(child.dateOfBirth)}</td>
                     <td className="table-cell tnum">
-                      {child.latestMeasurementDate === null ? '—' : formatMonths(child.latestAgeMonths)}
+                      {child.latestMeasurementDate === null ? '-' : formatMonths(child.latestAgeMonths)}
                     </td>
                     <td className="table-cell tnum">
                       {formatDateShort(child.latestMeasurementDate)}

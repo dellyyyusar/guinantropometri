@@ -41,7 +41,7 @@ describe('normalizeMethod', () => {
 describe('normalizeDate', () => {
   it('Date diurai memakai waktu LOKAL, tidak bergeser satu hari', () => {
     // Excel menyerahkan tengah malam waktu lokal. toISOString() akan
-    // memundurkannya sehari di zona UTC+7 — ini yang harus dicegah.
+    // memundurkannya sehari di zona UTC+7 - ini yang harus dicegah.
     const date = new Date(2026, 0, 14)
     expect(normalizeDate(date)).toBe('2026-01-14')
   })

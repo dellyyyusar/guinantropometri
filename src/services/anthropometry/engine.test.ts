@@ -1,4 +1,4 @@
-﻿import { describe, expect, it } from 'vitest'
+import { describe, expect, it } from 'vitest'
 import { calculateAge, formatAge } from './age'
 import { calculateBmi } from './bmi'
 import { LENGTH_HEIGHT_OFFSET_CM, correctLengthHeight, round2 } from './correction'

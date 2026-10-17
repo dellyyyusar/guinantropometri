@@ -1,4 +1,4 @@
-﻿import { count, gte, sql } from 'drizzle-orm'
+import { count, gte, sql } from 'drizzle-orm'
 import { getDb, sqlAll } from '~/db'
 import { anthropometricResults, children, measurements } from '~/db/schema'
 import { OVERALL_ATTENTION, OVERALL_NORMAL, OVERALL_RISK } from '~/services/anthropometry'

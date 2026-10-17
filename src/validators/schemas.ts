@@ -1,4 +1,4 @@
-﻿import { z } from 'zod'
+import { z } from 'zod'
 import { GENDERS, MEASUREMENT_METHODS } from '~/db/schema'
 import { parseDateString } from '~/services/anthropometry/age'
 

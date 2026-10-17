@@ -1,4 +1,4 @@
-﻿import { sql } from 'drizzle-orm'
+import { sql } from 'drizzle-orm'
 import { getDb } from '~/db'
 import { anthropometricResults, children, measurements } from '~/db/schema'
 import { AppError } from '~/lib/errors'
@@ -183,7 +183,7 @@ export type ImportResult = {
 
 /**
  * Tulis baris yang sudah dikonfirmasi pengguna.
- * Validasi diulang dari nol di server â€” hasil pratinjau klien tidak dipercaya.
+ * Validasi diulang dari nol di server - hasil pratinjau klien tidak dipercaya.
  */
 export async function commitImport(
   inputs: readonly ImportRowInput[],

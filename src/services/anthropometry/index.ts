@@ -1,4 +1,4 @@
-﻿import type { Gender, Indicator, MeasurementMethod } from '~/db/schema'
+import type { Gender, Indicator, MeasurementMethod } from '~/db/schema'
 import { calculateAge, usesInfantTable, type Age } from './age'
 import { detectAnomaly, detectZScoreWarnings, type ClinicalWarning, type ValidationIssue, type PreviousMeasurement } from './anomaly'
 import { calculateBmi } from './bmi'
@@ -254,7 +254,7 @@ export * from './status'
 export * from './zscore'
 
 /**
- * AnthropometryService â€” antarmuka yang dipakai lapisan server.
+ * AnthropometryService - antarmuka yang dipakai lapisan server.
  * Objek tipis di atas fungsi murni; dibuat supaya pemanggil tidak perlu tahu
  * urutan age -> correction -> bmi -> z-score -> status -> anomaly.
  */

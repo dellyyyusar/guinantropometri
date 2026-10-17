@@ -1,4 +1,4 @@
-﻿export const STATUS_REFERENCE_MISSING = 'Referensi tidak tersedia'
+export const STATUS_REFERENCE_MISSING = 'Referensi tidak tersedia'
 export const STATUS_UNCOMPUTABLE = 'Data tidak dapat dihitung'
 
 /**

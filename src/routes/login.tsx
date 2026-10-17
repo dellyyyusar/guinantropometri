@@ -1,4 +1,4 @@
-﻿import { zodResolver } from '@hookform/resolvers/zod'
+import { zodResolver } from '@hookform/resolvers/zod'
 import { createFileRoute, redirect, useNavigate, useRouter } from '@tanstack/react-router'
 import { useServerFn } from '@tanstack/react-start'
 import { useForm } from 'react-hook-form'
@@ -53,7 +53,7 @@ function LoginPage() {
         <div className="mb-6 text-center">
           <h1 className="text-xl font-semibold tracking-tight text-primary">Antropometri Anak</h1>
           <p className="mt-1 text-xs text-muted">
-            Standar Antropometri Anak â€” Permenkes RI No. 2 Tahun 2020
+            Standar Antropometri Anak - Permenkes RI No. 2 Tahun 2020
           </p>
         </div>
 

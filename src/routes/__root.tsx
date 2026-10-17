@@ -1,4 +1,4 @@
-﻿import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { HeadContent, Outlet, Scripts, createRootRoute } from '@tanstack/react-router'
 import { useState } from 'react'
 import appCss from '~/styles.css?url'
@@ -9,7 +9,7 @@ export const Route = createRootRoute({
     meta: [
       { charSet: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { title: 'Antropometri Anak â€” Standar Permenkes No. 2 Tahun 2020' },
+      { title: 'Antropometri Anak - Standar Permenkes No. 2 Tahun 2020' },
       {
         name: 'description',
         content:

@@ -1,4 +1,4 @@
-﻿import { and, desc, eq, lt } from 'drizzle-orm'
+import { and, desc, eq, lt } from 'drizzle-orm'
 import { getDb } from '~/db'
 import {
   anthropometricResults,
@@ -24,7 +24,7 @@ export type MeasurementRow = {
   result: AnthropometricResult | null
 }
 
-/** Pengukuran terakhir SEBELUM tanggal tertentu â€” dasar perbandingan dan deteksi anomali. */
+/** Pengukuran terakhir SEBELUM tanggal tertentu - dasar perbandingan dan deteksi anomali. */
 export async function getPreviousMeasurement(
   childId: number,
   beforeDate: string,
@@ -63,7 +63,7 @@ export async function loadChild(childId: number): Promise<ChildForCalculation & 
 
 /**
  * Hitung ulang tanpa menyimpan. Dipakai form input supaya pratinjau z-score
- * datang dari mesin yang sama persis dengan yang menulis ke database â€”
+ * datang dari mesin yang sama persis dengan yang menulis ke database -
  * klien tidak pernah menghitung sendiri.
  */
 export async function previewMeasurement(

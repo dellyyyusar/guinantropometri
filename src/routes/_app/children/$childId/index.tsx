@@ -1,4 +1,4 @@
-﻿import { createFileRoute, Link, notFound, useRouter } from '@tanstack/react-router'
+import { createFileRoute, Link, notFound, useRouter } from '@tanstack/react-router'
 import { useServerFn } from '@tanstack/react-start'
 import { useState } from 'react'
 import { chartSeriesFn } from '~/api/dashboard'
@@ -54,12 +54,12 @@ function ChildDetailPage() {
   const [busy, setBusy] = useState(false)
 
   // Umur hari ini dihitung dari tanggal lahir, bukan disimpan.
-  let currentAge = 'â€”'
+  let currentAge = '-'
   try {
     const age = calculateAge(child.dateOfBirth, todayIso())
     currentAge = `${age.years} tahun ${age.months} bulan`
   } catch {
-    currentAge = 'â€”'
+    currentAge = '-'
   }
 
   // Riwayat terbaru di atas; grafik tetap memakai urutan menaik dari loader.
@@ -141,14 +141,14 @@ function ChildDetailPage() {
           <Item label="Jumlah Pengukuran" value={String(measurements.length)} />
           <Item
             label="Berat Lahir"
-            value={child.birthWeight === null ? 'â€”' : `${formatNumber(child.birthWeight, 3)} kg`}
+            value={child.birthWeight === null ? '-' : `${formatNumber(child.birthWeight, 3)} kg`}
           />
           <Item
             label="Panjang Lahir"
-            value={child.birthLength === null ? 'â€”' : `${formatNumber(child.birthLength, 2)} cm`}
+            value={child.birthLength === null ? '-' : `${formatNumber(child.birthLength, 2)} cm`}
           />
-          <Item label="Nama Ibu" value={child.motherName ?? 'â€”'} />
-          <Item label="Nama Ayah" value={child.fatherName ?? 'â€”'} />
+          <Item label="Nama Ibu" value={child.motherName ?? '-'} />
+          <Item label="Nama Ayah" value={child.fatherName ?? '-'} />
           {child.address !== null ? <Item label="Alamat" value={child.address} className="sm:col-span-2" /> : null}
           {child.notes !== null ? <Item label="Catatan" value={child.notes} className="sm:col-span-2" /> : null}
         </dl>
@@ -220,7 +220,7 @@ function ChildDetailPage() {
                         />
                       </td>
                       <td className="table-cell text-right tnum">
-                        <div>{entry.correctedLengthHeightCm === null ? 'â€”' : formatNumber(entry.correctedLengthHeightCm, 2)}</div>
+                        <div>{entry.correctedLengthHeightCm === null ? '-' : formatNumber(entry.correctedLengthHeightCm, 2)}</div>
                         <Delta
                           current={entry.correctedLengthHeightCm}
                           previous={previous?.correctedLengthHeightCm ?? null}
@@ -231,21 +231,21 @@ function ChildDetailPage() {
                       <td className="table-cell text-right tnum">{formatNumber(entry.bmi, 2)}</td>
                       <td className="table-cell">
                         {result === null ? (
-                          <span className="text-faint">â€”</span>
+                          <span className="text-faint">-</span>
                         ) : (
                           <ZCell z={result.weightForAgeZ} status={result.weightForAgeStatus} />
                         )}
                       </td>
                       <td className="table-cell">
                         {result === null ? (
-                          <span className="text-faint">â€”</span>
+                          <span className="text-faint">-</span>
                         ) : (
                           <ZCell z={result.lengthHeightForAgeZ} status={result.lengthHeightForAgeStatus} />
                         )}
                       </td>
                       <td className="table-cell">
                         {result === null ? (
-                          <span className="text-faint">â€”</span>
+                          <span className="text-faint">-</span>
                         ) : (
                           <ZCell
                             z={result.weightForLengthHeightZ}
@@ -255,7 +255,7 @@ function ChildDetailPage() {
                       </td>
                       <td className="table-cell">
                         {result === null ? (
-                          <span className="text-faint">â€”</span>
+                          <span className="text-faint">-</span>
                         ) : (
                           <ZCell z={result.bmiForAgeZ} status={result.bmiForAgeStatus} />
                         )}

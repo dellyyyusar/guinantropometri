@@ -1,7 +1,7 @@
 import type { ImportRow } from '~/validators/schemas'
 
 /**
- * Normalisasi baris Excel — MURNI, tanpa akses database.
+ * Normalisasi baris Excel - MURNI, tanpa akses database.
  *
  * Dipisah dari services/import.ts supaya berkas ini boleh ikut ke bundel browser:
  * peramban memakainya untuk membaca .xlsx sebelum mengirimkannya ke server,

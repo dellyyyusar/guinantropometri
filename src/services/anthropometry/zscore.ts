@@ -5,7 +5,7 @@ export type ZScoreMethod = 'piecewise_interpolation' | 'lms'
 export type ZScoreResult = {
   /**
    * Nilai Z dibulatkan 2 desimal, atau null bila tidak dapat dihitung.
-   * TIDAK pernah di-fallback ke 0, +3, atau -3 saat referensi hilang — lihat referenceFound.
+   * TIDAK pernah di-fallback ke 0, +3, atau -3 saat referensi hilang - lihat referenceFound.
    */
   zScore: number | null
   method: ZScoreMethod

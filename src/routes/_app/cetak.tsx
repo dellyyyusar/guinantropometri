@@ -46,7 +46,7 @@ function PrintPage() {
             Laporan Status Antropometri Anak
           </h2>
           <p className="mt-0.5 text-xs text-muted">
-            Standar Antropometri Anak — Permenkes RI Nomor 2 Tahun 2020 (WHO Child Growth Standards
+            Standar Antropometri Anak - Permenkes RI Nomor 2 Tahun 2020 (WHO Child Growth Standards
             2006)
           </p>
           <p className="mt-1 text-[11px] text-faint">
@@ -95,7 +95,7 @@ function PrintPage() {
 }
 
 function formatCell(key: string, value: string | number | null): string {
-  if (value === null || value === undefined || value === '') return '—'
+  if (value === null || value === undefined || value === '') return '-'
   if (key.startsWith('tanggal')) return formatDateShort(String(value))
   return String(value)
 }

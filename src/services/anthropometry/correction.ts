@@ -48,7 +48,7 @@ export function correctLengthHeight(input: {
  * Epsilon diperlukan: nilai yang secara matematis tepat di tengah (mis. z = -1.625)
  * bisa tersimpan sebagai -1.6249999999999996 akibat aritmetika floating point,
  * sehingga Math.round polos menghasilkan -1.62 atau -1.63 tergantung debu bit.
- * Dengan epsilon hasilnya deterministik — penting karena status gizi dibaca dari
+ * Dengan epsilon hasilnya deterministik - penting karena status gizi dibaca dari
  * angka yang sudah dibulatkan ini.
  */
 export function round2(value: number): number {

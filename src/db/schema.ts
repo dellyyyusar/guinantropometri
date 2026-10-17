@@ -1,4 +1,4 @@
-﻿import {
+import {
   date,
   timestamp,
   decimal,

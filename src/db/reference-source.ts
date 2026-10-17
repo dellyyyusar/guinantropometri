@@ -1,4 +1,4 @@
-﻿import { readFileSync } from 'node:fs'
+import { readFileSync } from 'node:fs'
 import { resolve } from 'node:path'
 import * as XLSX from 'xlsx'
 import type { Gender, Indicator, NewAnthropometricReference } from './schema'
@@ -123,7 +123,7 @@ function readSource(dir: string, spec: SourceSpec): ReferenceSeedRow[] {
         cutpoints.plus2Sd < cutpoints.plus3Sd
       )
     ) {
-      throw new Error(`${where}: cutpoint SD tidak monoton naik â€” ${JSON.stringify(cutpoints)}`)
+      throw new Error(`${where}: cutpoint SD tidak monoton naik - ${JSON.stringify(cutpoints)}`)
     }
 
     return {

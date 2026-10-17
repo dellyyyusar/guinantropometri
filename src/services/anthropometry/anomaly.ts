@@ -1,4 +1,4 @@
-﻿import type { Gender, MeasurementMethod } from '~/db/schema'
+import type { Gender, MeasurementMethod } from '~/db/schema'
 import { MAX_AGE_MONTHS, calculateAge, dateFromIso, parseDateString, type Age } from './age'
 import { calculateBmi } from './bmi'
 import { correctLengthHeight } from './correction'
@@ -54,7 +54,7 @@ function daysBetween(fromIso: string, toIso: string): number {
 }
 
 /**
- * VALIDATION ERROR â€” kalau ada satu saja, pengukuran tidak boleh disimpan.
+ * VALIDATION ERROR - kalau ada satu saja, pengukuran tidak boleh disimpan.
  */
 export function validateMeasurement(input: AnomalyInput): ValidationIssue[] {
   const errors: ValidationIssue[] = []
@@ -129,7 +129,7 @@ export function validateMeasurement(input: AnomalyInput): ValidationIssue[] {
 }
 
 /**
- * CLINICAL WARNING â€” data tetap boleh disimpan, tetapi petugas harus melihat peringatannya.
+ * CLINICAL WARNING - data tetap boleh disimpan, tetapi petugas harus melihat peringatannya.
  */
 export function clinicalWarnings(input: AnomalyInput, age: Age | null): ClinicalWarning[] {
   const warnings: ClinicalWarning[] = []
@@ -160,7 +160,7 @@ export function clinicalWarnings(input: AnomalyInput, age: Age | null): Clinical
     if (bmi !== null && (bmi < BMI_MIN || bmi > BMI_MAX)) {
       warnings.push({
         code: 'BMI_OUT_OF_RANGE',
-        message: `IMT ${bmi.toFixed(1)} kg/mÂ² di luar rentang wajar ${BMI_MIN}-${BMI_MAX}. Periksa kembali berat dan panjang/tinggi badan.`,
+        message: `IMT ${bmi.toFixed(1)} kg/m² di luar rentang wajar ${BMI_MIN}-${BMI_MAX}. Periksa kembali berat dan panjang/tinggi badan.`,
       })
     }
     const ratio = input.weightKg / correctedLengthHeightCm

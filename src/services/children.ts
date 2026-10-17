@@ -1,4 +1,4 @@
-﻿import { and, count, eq, like, or, sql } from 'drizzle-orm'
+import { and, count, eq, like, or, sql } from 'drizzle-orm'
 import { getDb, sqlAll } from '~/db'
 import { anthropometricResults, children, measurements, type Child, type Gender, type AnthropometricResult, type Measurement } from '~/db/schema'
 import { AppError, ValidationError } from '~/lib/errors'
@@ -45,7 +45,7 @@ function buildWhere(filters: ChildFilters) {
 /**
  * Status pengukuran terakhir per anak.
  * ROW_NUMBER() dipakai karena MAX(measurement_date) bisa seri bila satu anak
- * diukur dua kali pada tanggal yang sama â€” tanpa tie-break barisnya ganda.
+ * diukur dua kali pada tanggal yang sama - tanpa tie-break barisnya ganda.
  */
 type LatestInfo = Pick<ChildSummary, 'latestMeasurementDate' | 'latestAgeMonths' | 'latestOverallStatus'>
 

@@ -1,4 +1,4 @@
-﻿import { createFileRoute, useNavigate, useRouter } from '@tanstack/react-router'
+import { createFileRoute, useNavigate, useRouter } from '@tanstack/react-router'
 import { useServerFn } from '@tanstack/react-start'
 import { useRef, useState } from 'react'
 import * as XLSX from 'xlsx'
@@ -15,7 +15,7 @@ export const Route = createFileRoute('/_app/import')({
 
 type Payload = { rows: { raw: Record<string, unknown>; lineNumber: number }[] }
 
-export function ImportPage() {
+function ImportPage() {
   const preview = useServerFn(previewImportFn)
   const commit = useServerFn(commitImportFn)
   const router = useRouter()
@@ -155,7 +155,7 @@ export function ImportPage() {
           </p>
           {busy === 'parse' ? (
             <p className="flex items-center gap-2 text-xs text-muted">
-              <Spinner /> Membaca dan memvalidasi {fileName}â€¦
+              <Spinner /> Membaca dan memvalidasi {fileName}…
             </p>
           ) : null}
         </div>
@@ -194,14 +194,14 @@ export function ImportPage() {
                         <Badge tone="attention">Bermasalah</Badge>
                       )}
                     </td>
-                    <td className="table-cell">{row.summary?.nama ?? 'â€”'}</td>
-                    <td className="table-cell tnum">{row.summary?.tanggalUkur ?? 'â€”'}</td>
-                    <td className="table-cell tnum">{row.summary?.umur ?? 'â€”'}</td>
-                    <td className="table-cell text-right tnum">{row.summary?.bb ?? 'â€”'}</td>
-                    <td className="table-cell text-right tnum">{row.summary?.pbTb ?? 'â€”'}</td>
+                    <td className="table-cell">{row.summary?.nama ?? '-'}</td>
+                    <td className="table-cell tnum">{row.summary?.tanggalUkur ?? '-'}</td>
+                    <td className="table-cell tnum">{row.summary?.umur ?? '-'}</td>
+                    <td className="table-cell text-right tnum">{row.summary?.bb ?? '-'}</td>
+                    <td className="table-cell text-right tnum">{row.summary?.pbTb ?? '-'}</td>
                     <td className="table-cell">
                       {row.summary === undefined ? (
-                        <span className="text-faint">â€”</span>
+                        <span className="text-faint">-</span>
                       ) : (
                         <div className="flex flex-col gap-1">
                           <span className="tnum text-xs text-muted">{formatZ(row.summary.zBbU)}</span>
@@ -211,7 +211,7 @@ export function ImportPage() {
                     </td>
                     <td className="table-cell">
                       {row.summary === undefined ? (
-                        <span className="text-faint">â€”</span>
+                        <span className="text-faint">-</span>
                       ) : (
                         <div className="flex flex-col gap-1">
                           <span className="tnum text-xs text-muted">{formatZ(row.summary.zPbTbU)}</span>
@@ -235,7 +235,7 @@ export function ImportPage() {
                         </ul>
                       ) : null}
                       {row.errors.length === 0 && row.warnings.length === 0 ? (
-                        <span className="text-faint">â€”</span>
+                        <span className="text-faint">-</span>
                       ) : null}
                     </td>
                   </tr>

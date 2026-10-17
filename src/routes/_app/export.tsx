@@ -79,7 +79,7 @@ function ExportPage() {
               invalid={scopeInvalid}
               onChange={(event) => setChildId(event.target.value)}
             >
-              <option value="">— pilih anak —</option>
+              <option value="">- pilih anak -</option>
               {options.map((child) => (
                 <option key={child.id} value={child.id}>
                   {child.childCode} · {child.name}

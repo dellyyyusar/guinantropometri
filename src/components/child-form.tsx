@@ -1,4 +1,4 @@
-﻿import { zodResolver } from '@hookform/resolvers/zod'
+import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm, type DefaultValues } from 'react-hook-form'
 import type { z } from 'zod'
 import { Alert, Button, Card, CardHeader, Field, Input, Select, Textarea } from './ui'
@@ -8,7 +8,7 @@ import { childSchema, type ChildInput } from '~/validators/schemas'
  * Skema memakai z.preprocess (kolom kosong -> null), jadi tipe MASUKAN zod
  * (kolom numerik bertipe unknown sebelum diparse) berbeda dari tipe KELUARAN.
  * Form diarahkan pada tipe masukan, dan onSubmit menerima tipe keluaran yang
- * sudah bersih â€” pemisahan ini yang membuat zodResolver cocok tanpa cast.
+ * sudah bersih - pemisahan ini yang membuat zodResolver cocok tanpa cast.
  */
 type ChildFormValues = z.input<typeof childSchema>
 

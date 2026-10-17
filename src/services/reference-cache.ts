@@ -12,7 +12,7 @@ import {
  * Ukurannya kecil dan isinya tidak pernah berubah di luar `pnpm db:seed`.
  *
  * ponytail: cache seumur proses. Bila seed dijalankan ulang tanpa restart,
- * panggil invalidateReferenceCache() — atau restart server, mana yang lebih mudah.
+ * panggil invalidateReferenceCache() - atau restart server, mana yang lebih mudah.
  */
 let cache: ReferenceIndex | undefined
 

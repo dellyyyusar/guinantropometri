@@ -1,4 +1,4 @@
-﻿import { beforeAll, describe, expect, it } from 'vitest'
+import { beforeAll, describe, expect, it } from 'vitest'
 import type { Gender, Indicator } from '~/db/schema'
 import { assertReferenceRowsComplete, loadReferenceRows } from '~/db/reference-source'
 import {
@@ -76,7 +76,7 @@ describe('tabel referensi Permenkes 2/2020', () => {
   })
 })
 
-describe('calculateAll â€” kasus LIA (P, lahir 14-01-2026, ukur 14-10-2026, BB 6.8, PB 61, berbaring)', () => {
+describe('calculateAll - kasus LIA (P, lahir 14-01-2026, ukur 14-10-2026, BB 6.8, PB 61, berbaring)', () => {
   it('menghitung umur, koreksi, IMT, dan empat indeks', () => {
     const r = calculateAll(lia, index)
 
@@ -98,7 +98,7 @@ describe('calculateAll â€” kasus LIA (P, lahir 14-01-2026, ukur 14-10-2026,
   })
 })
 
-describe('calculateAll â€” pemilihan tabel mengikuti umur', () => {
+describe('calculateAll - pemilihan tabel mengikuti umur', () => {
   it('usia > 24 bulan memakai TB_U, BB_TB, IMT_U_TB', () => {
     const r = calculateAll(
       {
@@ -121,7 +121,7 @@ describe('calculateAll â€” pemilihan tabel mengikuti umur', () => {
   })
 })
 
-describe('calculateAll â€” referensi tidak tersedia', () => {
+describe('calculateAll - referensi tidak tersedia', () => {
   it('menghasilkan zScore null dan status "Referensi tidak tersedia", tanpa fallback angka', () => {
     const r = calculateAll(
       {
@@ -164,7 +164,7 @@ describe('calculateAll â€” referensi tidak tersedia', () => {
   })
 })
 
-describe('calculateAll â€” VALIDATION ERROR (data tidak boleh disimpan)', () => {
+describe('calculateAll - VALIDATION ERROR (data tidak boleh disimpan)', () => {
   it('tanggal lahir > tanggal ukur', () => {
     const r = calculateAll({ ...lia, dateOfBirth: '2026-11-01' }, index)
     expect(r.errors.map((e) => e.code)).toContain('DATE_BEFORE_BIRTH')
@@ -196,7 +196,7 @@ describe('calculateAll â€” VALIDATION ERROR (data tidak boleh disimpan)', (
   })
 })
 
-describe('calculateAll â€” CLINICAL WARNING (data boleh disimpan)', () => {
+describe('calculateAll - CLINICAL WARNING (data boleh disimpan)', () => {
   it('BB 2 kg + PB 80 cm pada usia 2 bulan memicu peringatan data tidak wajar', () => {
     const r = calculateAll(
       {

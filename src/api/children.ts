@@ -1,4 +1,4 @@
-﻿import { createServerFn } from '@tanstack/react-start'
+import { createServerFn } from '@tanstack/react-start'
 import { z } from 'zod'
 import { requireUser } from '~/auth/session'
 import type { AnthropometricResult, Child, Gender, Measurement, MeasurementMethod } from '~/db/schema'
